@@ -1,13 +1,13 @@
 from fastapi import APIRouter
 from typing import List
-from models.image_models import ImageAnalysisRequest, SubcategoryDescription
+from models.image import ImageAnalysisRequest, SubcategoryDescription
 from services.image_analyzer import get_image_description
 
 router = APIRouter()
 
 
 @router.post(
-    "/analyze-image",
+    "/analyze",
     response_model=SubcategoryDescription,
     summary="Analyze image with subcategories",
     description="Analyzes the image and returns a description for each subcategory provided.",

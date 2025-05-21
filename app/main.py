@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 import uvicorn
 from routes.image import router as image_router
+from routes.generate_outfits import router as outfit_router
 from config import PORT
+
 
 app = FastAPI(
     title="AI Image Description API",
@@ -10,6 +12,7 @@ app = FastAPI(
 )
 
 app.include_router(image_router, prefix="/api")
+app.include_router(outfit_router, prefix="/api")
 
 
 @app.get("/")

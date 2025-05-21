@@ -1,5 +1,5 @@
 from typing import List
-from models.image_models import Subcategory
+from models.image import Subcategory
 from config import AI_API_KEY as API_KEY
 from openai import OpenAI
 import json
